@@ -504,7 +504,7 @@ Total_Steps[, .(Mean_Steps = mean(steps), Median_Steps = median(steps))]</code><
 <ol style="list-style-type: decimal">
 <li>Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.</li>
 </ol>
-<pre class="r"><code># Just recreating activityDT from scratch then making the new factor variable. (No need to, just want to be clear on what the entire process is.) 
+<pre class="r"><code># I thought it would be useful to recreate activityDT 
 activityDT &lt;- data.table::fread(input = &quot;data/activity.csv&quot;)
 activityDT[, date := as.POSIXct(date, format = &quot;%Y-%m-%d&quot;)]
 activityDT[, `Day of Week`:= weekdays(x = date)]
